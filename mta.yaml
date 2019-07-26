@@ -15,6 +15,13 @@ modules:
     - name: uaa_HANA_APP
     - name: dest_HANA_APP
 
+
+ - name: db
+   type: hdb
+   path: db
+   requires:
+    - name: hdi_db
+
 resources:
  - name: uaa_HANA_APP
    parameters:
@@ -28,4 +35,10 @@ resources:
       service-plan: lite
       service: destination
    type: org.cloudfoundry.managed-service
+
+
+ - name: hdi_db
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
 
