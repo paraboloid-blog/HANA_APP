@@ -22,6 +22,9 @@ modules:
    requires:
     - name: hdi_db
 
+
+ 
+
 resources:
  - name: uaa_HANA_APP
    parameters:
